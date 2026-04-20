@@ -1,5 +1,6 @@
 package team.dovecotmc.old.metropolis.block;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -92,8 +93,13 @@ public class BlockTicketVendorUp extends HorizontalDirectionalBlock {
         }
     }
 
-    @Override
+
     public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
         return world.getBlockState(pos.below()).getBlock() instanceof BlockTicketVendor || world.getBlockState(pos.below()).getBlock() instanceof BlockFareAdjMachine ? new ItemStack(world.getBlockState(pos.below()).getBlock()) : ItemStack.EMPTY;
+    }
+
+    @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return null;
     }
 }
