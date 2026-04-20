@@ -483,10 +483,10 @@ public class TicketVendorScreen2 extends Screen {
     }
 
     @Override
-    public boolean mouseScrolled(double mouseX, double mouseY, double amountH, double amountV) {
-        sliderPos -= amountV;
+    public boolean mouseScrolled(double mouseX, double mouseY, double amount) {
+        sliderPos -= amount;
         sliderPos = Math.min(Math.max(0, sliderPos), stations.size() - MAX_VISIBLE);
-        return super.mouseScrolled(mouseX, mouseY, amountH, amountV);
+        return super.mouseScrolled(mouseX, mouseY, amount);
     }
 
     @Override

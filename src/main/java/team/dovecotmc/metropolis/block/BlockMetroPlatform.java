@@ -1,6 +1,5 @@
 package team.dovecotmc.metropolis.block;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.StringRepresentable;
@@ -33,11 +32,6 @@ public class BlockMetroPlatform extends HorizontalDirectionalBlock implements IB
 
     public BlockMetroPlatform(Properties settings) {
         this(settings, PlatformShape.NORMAL);
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
-        return null;
     }
 
     public BlockMetroPlatform(Properties settings, PlatformShape shape) {

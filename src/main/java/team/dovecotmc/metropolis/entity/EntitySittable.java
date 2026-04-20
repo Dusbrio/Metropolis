@@ -47,7 +47,7 @@ public class EntitySittable extends Entity {
     @Override
     protected void positionRider(Entity passenger, Entity.MoveFunction moveFunction) {
         if (this.hasPassenger(passenger)) {
-            double d = this.getY() + this.getPassengersRidingOffset() + passenger.getMyRidingOffset(passenger);
+            double d = this.getY() + this.getPassengersRidingOffset() + passenger.getMyRidingOffset();
             moveFunction.accept(passenger, this.getX(), d + passenger.getEyeHeight(Pose.CROUCHING), this.getZ());
         }
     }
@@ -204,6 +204,7 @@ public class EntitySittable extends Entity {
         copyEntityData(passenger);
     }
 
+    @Override
     public double getPassengersRidingOffset() {
         return getEyeHeight() - .25;
     }

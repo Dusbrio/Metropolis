@@ -191,7 +191,6 @@ public class TicketVendorScreenBuyIC extends Screen {
             CompoundTag nbt = ticketStack.getOrCreateTag();
             int cost = Integer.parseInt(value);
             nbt.putInt(ItemCard.BALANCE, cost);
-            nbt.putInt(ItemCard.MAX_VALUE, nbt.getInt(ItemCard.BALANCE));
 
             if (this.minecraft != null) {
                 this.minecraft.setScreen(new TicketVendorPaymentScreen(

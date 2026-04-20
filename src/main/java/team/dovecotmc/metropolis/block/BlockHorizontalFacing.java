@@ -1,6 +1,5 @@
 package team.dovecotmc.metropolis.block;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -15,11 +14,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 public class BlockHorizontalFacing extends HorizontalDirectionalBlock {
     public BlockHorizontalFacing(Properties settings) {
         super(settings);
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
-        return null;
     }
 
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
