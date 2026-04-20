@@ -1,6 +1,5 @@
 package team.dovecotmc.old.metropolis.block;
 
-import com.mojang.serialization.MapCodec;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -125,10 +124,5 @@ public class BlockFareAdjMachine extends HorizontalDirectionalBlock implements E
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new BlockEntityFareAdj(pos, state);
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
-        return null;
     }
 }

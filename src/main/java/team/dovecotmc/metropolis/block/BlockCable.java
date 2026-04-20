@@ -1,6 +1,5 @@
 package team.dovecotmc.metropolis.block;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -40,6 +39,11 @@ public class BlockCable extends HorizontalDirectionalBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
+    }
+
+    @Override
+    public ItemStack getCloneItemStack(BlockGetter world, BlockPos pos, BlockState state) {
+        return new ItemStack(MetroItems.ITEM_CABLE);
     }
 
     @Override
@@ -155,10 +159,5 @@ public class BlockCable extends HorizontalDirectionalBlock {
 //        }
 
         return finalBlock.withPropertiesOf(state);
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
-        return null;
     }
 }
